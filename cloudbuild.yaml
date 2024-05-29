@@ -5,9 +5,6 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/php-app']
 images:
 - 'gcr.io/$PROJECT_ID/php-app'
-env:
-- name: PORT
-  value: "8080"
 
 
 - name: 'gcr.io/cloud-builders/gcloud'
