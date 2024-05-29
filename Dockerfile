@@ -10,6 +10,9 @@ RUN chown -R www-data:www-data /var/www/html
 # Mengaktifkan modul Apache yang diperlukan
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
+# Menambahkan konfigurasi ServerName untuk mengatasi warning
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 # Menambahkan script untuk menginstall dependensi tambahan jika diperlukan
 # RUN apt-get update && apt-get install -y libpng-dev && docker-php-ext-install gd
 
