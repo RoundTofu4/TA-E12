@@ -1,11 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/php-app', '.']
+  args: ['build', '-t', 'gcr.io/my-project-id/php-app', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/php-app']
+  args: ['push', 'gcr.io/my-project-id/php-app']
 images:
-- 'gcr.io/$PROJECT_ID/php-app'
-
+- 'gcr.io/my-project-id/php-app'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'php-app', '--image', 'gcr.io/$PROJECT_ID/php-app', '--platform', 'managed', '--region', 'us-west2', '--allow-unauthenticated']
+  args: ['run', 'deploy', 'php-app', '--image', 'gcr.io/my-project-id/php-app', '--platform', 'managed', '--region', 'us-west2', '--allow-unauthenticated']
